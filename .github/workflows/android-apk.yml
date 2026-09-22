@@ -1,0 +1,29 @@
+name: Build LOCALGO Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.35.0'
+          channel: stable
+
+      - name: Get dependencies
+        working-directory: customer_app
+        run: flutter pub get
+
+      - name: Build APK
+        working-directory: customer_app
+        run: flutter build apk --release
