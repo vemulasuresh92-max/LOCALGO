@@ -1,7 +1,7 @@
-name: localgo
-description: LOCALGO - Find Local. Book Local. Grow Local.
+name: localgo_customer
+description: LOCALGO customer app
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: '>=3.5.0 <4.0.0'

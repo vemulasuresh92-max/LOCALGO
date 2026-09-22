@@ -1,15 +1,19 @@
 workflows:
   localgo_android:
-    name: LOCALGO Google Play AAB
+    name: LOCALGO Clean Android Build
     max_build_duration: 30
     environment:
       flutter: stable
     scripts:
-      - name: Get Flutter packages
+      - name: Generate Android project
+        script: |
+          flutter create . --platforms=android --org com.localgo --project-name localgo_customer
+      - name: Get dependencies
         script: flutter pub get
-      - name: Create Android project files if needed
-        script: flutter create . --platforms=android --org com.localgo --project-name localgo
-      - name: Build Google Play App Bundle
+      - name: Build clean APK
+        script: flutter build apk --release
+      - name: Build Google Play AAB
         script: flutter build appbundle --release
     artifacts:
-      - build/app/outputs/bundle/release/*.aab
+      - build/app/outputs/flutter-apk/app-release.apk
+      - build/app/outputs/bundle/release/app-release.aab
