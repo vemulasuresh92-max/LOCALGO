@@ -1,5 +1,5 @@
-name: localgo_customer
-description: LOCALGO customer app
+name: localgo_business
+description: LOCALGO Business app
 publish_to: "none"
 version: 1.0.0+1
 environment:
