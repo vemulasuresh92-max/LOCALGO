@@ -1,5 +1,11 @@
-# LOCALGO Clean Build
+# LOCALGO Clean Fixed Build
 
-Clean Flutter customer app. No ARCore, no Google Play Services for AR, and no AR dependency.
+Full Flutter Android project for LOCALGO.
 
-Codemagic generates the standard Android project and builds both APK and Google Play AAB.
+- Application ID: com.localgo.customer
+- Search: working with submit/arrow
+- Categories: clickable and open filtered results
+- No AR/ARCore dependency
+- APK and AAB Codemagic builds
+
+Upload the contents of this folder to the repository root, then run the `localgo_android` Codemagic workflow.
